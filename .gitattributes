@@ -1,2 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Prevent GitHub from incorrectly categorizing the repository as the wrong langauge.
+*.gml linguist-detectable=true
+*.yy linguist-detectable=false
