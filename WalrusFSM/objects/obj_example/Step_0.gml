@@ -1,3 +1,3 @@
 /// @desc Run the update code
 
-state_machine.update()
+state_machine.update();

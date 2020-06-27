@@ -1,3 +1,3 @@
 /// @desc Go to the next state
 
-state_machine.next()
+state_machine.next();
