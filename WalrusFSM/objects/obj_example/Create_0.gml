@@ -1,53 +1,96 @@
-/// @desc An example object
+/// @desc An example object.
 
-// The states as an enum
+// The states as an enum.
 enum test_state {
 	example1,
 	example2,
 	example3
 }
 
-// Some variables for demonstration
+// Some variables for demonstration.
 text = "";
 color = c_white;
 
+// Create the finite state machine
 state_machine = new StateMachine();
 
-// State 1
+// ------------
+#region State 1
+// ------------
+
+// Create state 1.
 var _state1 = new State();
+
+// The state that will come after this one when we use the "next()" method.
 _state1.next = test_state.example2;
+
+// Set the state methods.
 _state1.on_enter = function() {
-	text = "It is the first state!";
+	text = "It is the first state!\n\nPress Space to go to the next state.";
 }
 _state1.update = function() {
-	color = make_color_hsv(100, sin(current_time/256)*128+127, 255);
+	color = make_color_hsv(100, sin(state_machine.timer()/12)*128+127, 255);
 }
+
+// Add the state to the finite state machine.
 state_machine.add(test_state.example1, _state1);
 
-// State 2
+#endregion
+
+// ------------
+#region State 2
+// ------------
+
+// Create state 2.
 var _state2 = new State();
+
+// The state that will come after this one when we use the "next()" method.
 _state2.next = test_state.example3;
+
+// Set the state methods.
 _state2.on_enter = function() {
-	text = "It is the second state, wohoo!!!";
+	text = "It is the second state, woohoo!!!\n\nYou should try pressing R to reset the current\nstate! You can also press D to destroy it.";
 }
 _state2.update = function() {
-	color = make_color_hsv(sin(current_time/512)*128+127, 255, 255);
+	color = make_color_hsv(sin(state_machine.timer()/64)*128+127, 255, 255);
 }
+
+// Add the state to the finite state machine.
 state_machine.add(test_state.example2, _state2);
 
-// State 3
+#endregion
+
+// ------------
+#region State 3
+// ------------
+
+// Create state 3.
 var _state3 = new State();
+
+// The state that will come after this one when we use the "next()" method.
 _state3.next = test_state.example1;
+
+// Set the state methods.
 _state3.on_enter = function() {
-	text = "IT IS THE THIRD STATE! Wow! Amazing!";
+	text = "IT IS THE THIRD STATE! Wow! Amazing!\n\nYou can use the number keys to switch states\ntoo!";
 	color = $21C7FF;
 }
 _state3.update = function() {
 	x = xstart+random_range(-4, 4);
 	y = ystart+random_range(-4, 4);
 }
+_state3.draw = function() {
+	draw_set_valign(fa_bottom)
+	draw_set_color(c_white)
+	draw_text_transformed(xstart, room_height-ystart, "The states have their own draw events as well.", 1, 1, abs(sin(state_machine.timer()/32))*5)
+	draw_set_valign(fa_top)
+}
 _state3.on_leave = function() {
 	x = xstart;
 	y = ystart;
 }
+
+// Add the state to the finite state machine.
 state_machine.add(test_state.example3, _state3);
+
+#endregion

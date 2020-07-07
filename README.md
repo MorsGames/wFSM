@@ -10,13 +10,17 @@ Finite state machines used very commonly in game development, but GameMaker does
 
 ---
 
-This library comes with 8 public methods, all of them being static methods within the Finite State Machine struct.
+This library comes with 12 public methods, all of them being static methods within the Finite State Machine struct.
 - add(index, state)
 - remove(index)
 - update()
+- draw()
 - change(index)
 - next()
+- reset()
+- get()
 - count()
+- timer()
 - clear()
 - destroy()
 
@@ -27,10 +31,19 @@ The entirety of this project is licensed under **MPL 2.0**. Please give me credi
 ---
 
 ## Changelog
-v1.0.1:
+v1.1.0 (07/07/2020):
+- Added "draw", "reset", "get", and "timer" methods.
+- Slightly improved the code.
+- Improved the comments.
+- There are now 2 example objects and rooms. One is more simplistic, while the other one showcases all the functions of the library.
+
+v1.0.1 (27/06/2020):
 - Made the code more consistent.
 - Made the example look fancier.
 - Rewrote the description.
 - Changed the license to MPL 2.0.
+
+v1.0.0 (14/06/2020):
+- Initial release.
 
 If you have any questions, you can ask them on this project's [itch.io page](https://mors-games.itch.io/WalrusFSM) or at my [Discord Server](https://discord.gg/4jgSARF).
