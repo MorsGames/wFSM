@@ -4,7 +4,7 @@
 
 [Download from itch.io!](https://mors-games.itch.io/WalrusFSM)
 
-For those who don't know, finite state machines are structures that can exist in a set amount of predefined states. Each one of these states can be given unique behaviors, abd you can easily switch between them just by using a single method.
+For those who don't know, finite state machines are structures that can exist in a set amount of predefined states. Each one of these states can be given unique behaviors, and you can easily switch between them just by using a single method.
 
 Finite state machines used very commonly in game development, but GameMaker does not have a built in way of setting them up. This library allows you to set up your own state machines very easily with minimal effort.
 
