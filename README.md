@@ -1,4 +1,4 @@
-# WalrusFSM v1.0.1
+# WalrusFSM v1.1.0
 
 **WalrusFSM** is an easy to use **Finite State Machine** library for **GameMaker Studio 2.3**.
 
@@ -10,6 +10,46 @@ Finite state machines used very commonly in game development, but GameMaker does
 
 ---
 
+## Basic Usage
+
+```gml
+// The states as an enum.
+enum test_state {
+	example1,
+	example2,
+}
+
+// Create the finite state machine.
+state_machine = new StateMachine();
+
+// Create state 1.
+var _state1 = new State();
+
+// Set the code that will be executed at the step event.
+_state1.update = function() {
+	x += 4;
+	if (x > room_width)
+		x = -256
+}
+
+// Create state 2.
+var _state2 = new State();
+
+// Set the code that will be executed at the step event.
+_state2.update = function() {
+	x -= 4;
+	if (x < -256)
+		x = room_width
+}
+
+// Add the states to the finite state machine.
+state_machine.add(test_state.example1, _state1);
+state_machine.add(test_state.example2, _state2);
+```
+
+---
+
+## Details
 This library comes with 12 public methods, all of them being static methods within the Finite State Machine struct.
 - add(index, state)
 - remove(index)
