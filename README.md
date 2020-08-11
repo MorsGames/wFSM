@@ -8,7 +8,6 @@ For those who don't know, finite state machines are structures that can exist in
 
 Finite state machines used very commonly in game development, but GameMaker does not have a built in way of setting them up. This library allows you to set up your own state machines very easily with minimal effort.
 
----
 
 ## Basic Usage
 
@@ -47,7 +46,6 @@ state_machine.add(test_state.example1, _state1);
 state_machine.add(test_state.example2, _state2);
 ```
 
----
 
 ## Details
 This library comes with 12 public methods, all of them being static methods within the Finite State Machine struct.
@@ -68,7 +66,6 @@ This library is only tested on Windows, and it currently does NOT work on HTML5.
 
 The entirety of this project is licensed under **MPL 2.0**. Please give me credit if you end up using this library, otherwise I will be very sad.
 
----
 
 ## Changelog
 v1.1.0 (07/07/2020):
