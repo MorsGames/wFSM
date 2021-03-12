@@ -1,10 +1,15 @@
-# WalrusFSM v1.1.0
+# WalrusFSM v1.1.1
 
 **WalrusFSM** is an easy to use and robust **Finite State Machine** library for **GameMaker Studio 2.3+**.
 
-[itch.io](https://mors-games.itch.io/WalrusFSM) | [YoYo Marketplace](https://marketplace.yoyogames.com/assets/9387/walrusfsm) | [Discord Server](https://discord.gg/4jgSARF)
+[API Reference](https://github.com/MorsGames/WalrusFSM/wiki) | [itch.io](https://mors-games.itch.io/WalrusFSM) | [YoYo Marketplace](https://marketplace.yoyogames.com/assets/9387/walrusfsm)
 
 Finite state machines are structures that can exist in a set amount of predefined states that contain unique behaviors. While finite state machines are used very commonly in game development, GameMaker does not have a built-in way of setting them up easily. This library allows you to set up your own finite state machines with minimal effort, and helps you keep them all organized.
+
+This library is only tested on the **Windows** and **HTML5** targets, but it should work on other platforms as well. It also comes with an example project that will teach you the basics.
+
+Since I made this library primarily for my own personal projects, I will keep updating it on a regular basis, at least for the time being.
+
 
 ## Basic Usage
 
@@ -43,34 +48,18 @@ state_machine.add(test_state.example1, _state1);
 state_machine.add(test_state.example2, _state2);
 ```
 
+To learn more about how to use this library, check out the [API Reference](https://github.com/MorsGames/WalrusFSM/wiki).
 
-## Details
-This library comes with 12 public methods for the StateMachine struct.
-- add(index, state)
-- remove(index)
-- update()
-- draw()
-- change(index)
-- next()
-- reset()
-- get()
-- count()
-- timer()
-- clear()
-- destroy()
 
-There are also 4 overridable methods for the State struct that are by default empty.
-- on_enter()
-- on_leave()
-- update()
-- draw()
-
-This library is only tested on Windows and HTML5 platforms, but it should also work on other platforms as well. It also comes with an example project that will teach you the basics.
-
-The entirety of this project is licensed under **MPL 2.0**, so please give me credit if you end up using it.
+## License
+This library is licensed under **MPL 2.0**. You can learn more about it [here](https://www.mozilla.org/en-US/MPL/2.0/FAQ/).
 
 
 ## Changelog
+v1.1.1 (12/03/2021):
+- Made some minor changes to the comments and the description.
+- Added the [API Reference](https://github.com/MorsGames/WalrusFSM/wiki).
+
 v1.1.0 (07/07/2020):
 - Added "draw", "reset", "get", and "timer" methods.
 - Slightly improved the code.

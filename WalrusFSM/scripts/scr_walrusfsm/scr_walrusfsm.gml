@@ -1,6 +1,9 @@
 // WalrusFSM by Mors
 // http://www.mors-games.com/
-// Licensed under MPL 2.0. Please give credit if used, otherwise I will be very sad.
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
 #macro __WALRUSFSM_VERSION "1.1.1"
 
