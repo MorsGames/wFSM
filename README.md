@@ -1,13 +1,10 @@
 # WalrusFSM v1.1.0
 
-**WalrusFSM** is an easy to use **Finite State Machine** library for **GameMaker Studio 2.3**.
+**WalrusFSM** is an easy to use and robust **Finite State Machine** library for **GameMaker Studio 2.3+**.
 
-[Download from itch.io!](https://mors-games.itch.io/WalrusFSM)
+[itch.io](https://mors-games.itch.io/WalrusFSM) | [YoYo Marketplace](https://marketplace.yoyogames.com/assets/9387/walrusfsm) | [Discord Server](https://discord.gg/4jgSARF)
 
-For those who don't know, finite state machines are structures that can exist in a set amount of predefined states. Each one of these states can be given unique behaviors, and you can easily switch between them just by using a single method.
-
-Finite state machines used very commonly in game development, but GameMaker does not have a built in way of setting them up. This library allows you to set up your own state machines very easily with minimal effort.
-
+Finite state machines are structures that can exist in a set amount of predefined states that contain unique behaviors. While finite state machines are used very commonly in game development, GameMaker does not have a built-in way of setting them up easily. This library allows you to set up your own finite state machines with minimal effort, and helps you keep them all organized.
 
 ## Basic Usage
 
@@ -48,7 +45,7 @@ state_machine.add(test_state.example2, _state2);
 
 
 ## Details
-This library comes with 12 public methods, all of them being static methods within the Finite State Machine struct.
+This library comes with 12 public methods for the StateMachine struct.
 - add(index, state)
 - remove(index)
 - update()
@@ -62,9 +59,15 @@ This library comes with 12 public methods, all of them being static methods with
 - clear()
 - destroy()
 
-This library is only tested on Windows and HTML5. It should also work on other platforms, but if it doesn't please let me know. It also comes with an example project that will teach you the basics.
+There are also 4 overridable methods for the State struct that are by default empty.
+- on_enter()
+- on_leave()
+- update()
+- draw()
 
-The entirety of this project is licensed under **MPL 2.0**. Please give me credit if you end up using this library, otherwise I will be very sad.
+This library is only tested on Windows and HTML5 platforms, but it should also work on other platforms as well. It also comes with an example project that will teach you the basics.
+
+The entirety of this project is licensed under **MPL 2.0**, so please give me credit if you end up using it.
 
 
 ## Changelog
