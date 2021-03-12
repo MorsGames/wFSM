@@ -1,6 +1,6 @@
 # WalrusFSM v1.1.1
 
-**WalrusFSM** is an easy to use and robust **Finite State Machine** library for **GameMaker Studio 2.3+**.
+**WalrusFSM** is an easy-to-use and robust **Finite State Machine** library for **GameMaker Studio 2.3+**.
 
 [API Reference](https://github.com/MorsGames/WalrusFSM/wiki) | [itch.io](https://mors-games.itch.io/WalrusFSM) | [YoYo Marketplace](https://marketplace.yoyogames.com/assets/9387/walrusfsm)
 
@@ -8,7 +8,7 @@ Finite state machines are structures that can exist in a set amount of predefine
 
 This library is only tested on the **Windows** and **HTML5** targets, but it should work on other platforms as well. It also comes with an example project that will teach you the basics.
 
-Since I made this library primarily for my own personal projects, I will keep updating it on a regular basis, at least for the time being.
+Since I made this library primarily for my own personal projects, I will keep updating it on a regular basis.
 
 
 ## Basic Usage
@@ -75,4 +75,4 @@ v1.0.1 (27/06/2020):
 v1.0.0 (14/06/2020):
 - Initial release.
 
-If you have any questions, you can ask them on this project's [itch.io page](https://mors-games.itch.io/WalrusFSM) or at my [Discord Server](https://discord.gg/4jgSARF).
+If you have any questions, you can ask them on this project's [itch.io page](https://mors-games.itch.io/WalrusFSM) or create an issue in this repository.
