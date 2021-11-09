@@ -60,7 +60,7 @@ If you want to use this library under a different license, get in contact with m
 
 
 ## Changelog
-v1.2.0 (06/11/2021):
+v1.2.0 (09/11/2021):
 - Rebranded the library.
 - Added the example project to the itch.io page as a playable HTML5 build.
 - Added support for custom events with the "add_event" and "run_event" methods.
