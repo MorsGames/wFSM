@@ -1,36 +1,32 @@
-// WalrusFSM by Mors
+// wFSM by Mors
 // http://www.mors-games.com/
 
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
-#macro __WALRUSFSM_VERSION "1.1.1"
+#macro __WFSM_VERSION "1.2.0"
 
-show_debug_message("WalrusFSM v" + __WALRUSFSM_VERSION + " by Mors");
+show_debug_message("wFSM v" + __WFSM_VERSION + " by Mors");
 
 /// @func State()
 /// @desc A state that can be added to a StateMachine.
 function State() constructor {
     
-    // The state that will come after this one when the "next" fuction of the state machine is called.
+    // The state that will come after this one when the "next" fuction of the StateMachine is called.
     next = -1;
 
     /// @func on_enter()
-    /// @desc The function that gets called when StateMachine enters the current state.
+    /// @desc The event that gets called when StateMachine enters the current state.
     static on_enter = function() {}
     
     /// @func on_leave()
-    /// @desc The function that gets called when StateMachine leaves the current state.
+    /// @desc The event that gets called when StateMachine leaves the current state.
     static on_leave = function() {}
     
-    /// @func update()
-    /// @desc The function that gets called when the "update" fuction of StateMachine is called.
-    static update = function() {}
-    
-    /// @func draw()
-    /// @desc The function that gets called when the "draw" fuction of StateMachine is called.
-    static draw = function() {}
+    /// @func on_update()
+    /// @desc The event that gets called when the "update" method of the StateMachine is called.
+    static on_update = function() {}
 }
 
 /// @func StateMachine()
@@ -130,15 +126,17 @@ function StateMachine() constructor {
     }
 	    
     /// @func update()
-    /// @desc Executes the "update" function of the current State.
+    /// @desc Executes the "update" event of the current State.
     static update = function() {
         __current_state.update();
         __state_timer++;
     }
     
-    /// @func draw()
-    /// @desc Executes the "draw" function of the current State.
-    static draw = function() {
-        __current_state.draw();
+    /// @func run_event(event_name)
+    /// @desc Executes a specific event of the current State.
+    /// @param {string} event_name Name of the event to execute.
+    static run_event = function(event_name) {
+		if (variable_struct_exists(__current_state, event_name))
+			variable_struct_get(__current_state, event_name)();
     }
 }
