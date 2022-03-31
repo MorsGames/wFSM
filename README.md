@@ -62,6 +62,7 @@ If you want to use this library under a different license, please get in contact
 ## Changelog
 v1.2.1 (31/03/2022):
 - Changed the name of the "update" event to "on_update".
+- Made the "on_enter" and "on_leave" events pass the index of the last state index as a parameter.
 - Touched up the internal documentation to work better with the upcoming smart autocompletion feature of GameMaker.
 
 v1.2.0 (09/11/2021):
