@@ -1,6 +1,6 @@
-# wFSM v1.2.0
+# wFSM v1.2.1
 
-**wFSM** is an easy-to-use **Finite State Machine** library for **GameMaker Studio 2.3**.
+**wFSM** is an easy-to-use **Finite State Machine** library for **GameMaker**.
 
 [API Reference](https://github.com/MorsGames/wFSM/wiki) | [itch.io](https://mors-games.itch.io/wFSM)
 
@@ -54,12 +54,16 @@ To learn more about how to use this library, check out the [API Reference](https
 
 
 ## License
-This library is licensed under **MPL 2.0**. You can learn more about it [here](https://www.mozilla.org/en-US/MPL/2.0/FAQ/).
+The main script for the library (the "scr_wfsm.gml" file) is licensed under **MPL 2.0**. You can learn more about it [here](https://www.mozilla.org/en-US/MPL/2.0/FAQ/), with Q8 being the most relevant part for most game developers. The rest of the repository is licensed under public domain.
 
-If you want to use this library under a different license, get in contact with me.
+If you want to use this library under a different license, please get in contact with me.
 
 
 ## Changelog
+v1.2.1 (31/03/2022):
+- Changed the name of the "update" event to "on_update".
+- Touched up the internal documentation to work better with the upcoming smart autocompletion feature of GameMaker.
+
 v1.2.0 (09/11/2021):
 - Rebranded the library.
 - Added the example project to the itch.io page as a playable HTML5 build.
