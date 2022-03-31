@@ -41,7 +41,7 @@ function StateMachine() constructor {
     
     /// @func add(index, state)
     /// @desc Adds a state to the finite state machine.
-    /// @param {mixed} index The unique index varable used to keep track of the state. Using enums is recommended, but you can also use strings if you really want to.
+    /// @param {mixed} index The unique index variable used to keep track of the state. Using enums is recommended, but you can also use strings if you really want to.
     /// @param {struct} state The state to be added.
     static add = function(index, state) { 
         __state_map[? index] = state;
