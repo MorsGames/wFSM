@@ -5,7 +5,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
-#macro __WFSM_VERSION "1.2.0"
+#macro __WFSM_VERSION "1.2.1"
 
 show_debug_message("wFSM v" + __WFSM_VERSION + " by Mors");
 
@@ -41,10 +41,10 @@ function StateMachine() constructor {
     
     /// @func add(index, state)
     /// @desc Adds a state to the finite state machine.
-    /// @param {anything} index The unique index varable used to keep track of the state. Using enums is recommended, but you can also use strings if you really want to.
-    /// @param {State} state The state to be added.
+    /// @param {mixed} index The unique index varable used to keep track of the state. Using enums is recommended, but you can also use strings if you really want to.
+    /// @param {struct} state The state to be added.
     static add = function(index, state) { 
-        __state_map[? index] = state ;
+        __state_map[? index] = state;
         if (__current_state == -1) {
             __current_state = state;
             __index = index;
@@ -54,7 +54,7 @@ function StateMachine() constructor {
     
     /// @func remove(index)
     /// @desc Removes a state from the finite state machine.
-    /// @param {anything} index Index of the state that's going to be removed.
+    /// @param {mixed} index Index of the state that's going to be removed.
     static remove = function(index) { 
         delete __state_map[? index];
         ds_map_delete(__state_map, index);
@@ -62,14 +62,15 @@ function StateMachine() constructor {
     
     /// @func change(index)
     /// @desc Changes the current state of StateMachine to the provided index.
-    /// @param {anything} index Index of the state that's going to be set as the new one.
+    /// @param {mixed} index Index of the state that's going to be set as the new one.
     static change = function(index) {
         var _next_state = __state_map[? index];
-        __current_state.on_leave();
+        __current_state.on_leave(__index);
         __current_state = _next_state;
+		var _last_state = __index;
         __index = index;
         __state_timer = 0;
-        __current_state.on_enter();
+        __current_state.on_enter(_last_state);
     }
     
     /// @func next()
@@ -81,9 +82,9 @@ function StateMachine() constructor {
     /// @func reset()
     /// @desc Works similarly to "change(index)" but it will "change" to the state that is already running, essentially resetting the current state. 
     static reset = function() {
-        __current_state.on_leave();
+        __current_state.on_leave(__index);
         __state_timer = 0;
-        __current_state.on_enter();
+        __current_state.on_enter(__index);
     }
     
     /// @func get()
@@ -128,7 +129,7 @@ function StateMachine() constructor {
     /// @func update()
     /// @desc Executes the "update" event of the current State.
     static update = function() {
-        __current_state.update();
+        __current_state.on_update();
         __state_timer++;
     }
     

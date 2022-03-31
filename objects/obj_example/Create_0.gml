@@ -75,15 +75,15 @@ _state3.on_enter = function() {
 	text = "IT IS THE THIRD STATE! Wow! Amazing!\n\nYou can use the number keys to switch states\ntoo!";
 	color = $21C7FF;
 }
-_state3.update = function() {
+_state3.on_update = function() {
 	x = xstart+random_range(-4, 4);
 	y = ystart+random_range(-4, 4);
 }
-_state3.draw = function() {
-	draw_set_valign(fa_bottom)
-	draw_set_color(c_white)
-	draw_text_transformed(xstart, room_height-ystart, "The states can have custom events as well.\nThis text is drawn with a custom event!", 1, 1, abs(sin(state_machine.timer()/32))*5)
-	draw_set_valign(fa_top)
+_state3.on_draw = function() {
+	draw_set_valign(fa_bottom);
+	draw_set_color(c_white);
+	draw_text_transformed(xstart, room_height-ystart, "The states can have custom events as well.\nThis text is drawn with a custom event!", 1, 1, abs(sin(state_machine.timer()/32))*5);
+	draw_set_valign(fa_top);
 }
 _state3.on_leave = function() {
 	x = xstart;
